@@ -10,24 +10,22 @@ This repo is the shared home for lecture notes, lab exercises, and reference mat
    ```
    git clone https://github.com/NMTAFE-Automation/robotics-systems-design-22697vic.git
    ```
-2. Check the `labs/` folder for the current week's exercise — each lab has its own subfolder with instructions and starter files.
-3. See `resources/` for setup guides (software installs, hardware datasheets, cheat sheets).
+2. See `resources/` for library files and student starter files.
+3. See `docs/` for references for supporting documents, OpenCV2 methods.
+4. Check the `utility/` folder for all instructions and software list.
 
 ## Repo structure
 
 - **resources/** — setup guides, datasheets, wiring diagrams, cheat sheets
 - **docs/** — supporting documentation (may link out to the course website)
+- **utility/** — supporting instructions and software list (may link out to the course website)
 
 ## Topics covered
 
 - Maqueen Robot, python programming
-- Arduino-based motor control labs
 - Raspberry Pi vision systems
-- Pneumatics
+- Huskylens
 
-## Contributing / submitting work
-
-If your instructor asks you to submit work through GitHub, fork this repo, commit your changes to your fork, and follow the submission instructions in the relevant `assignments/` brief.
 
 ## License
 
