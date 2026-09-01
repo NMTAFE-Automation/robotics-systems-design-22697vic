@@ -114,10 +114,16 @@ hostname
 python3 --version
 ```
 
-To copy the course files from another computer to the Raspberry Pi, use `scp`:
+Create a working space folder in /home/pi directory called as "robotic_ws"
 
 ```bash
-scp -r Sessions pi@down-pi.local:/home/pi/
+mkdir robotic_ws
+```
+
+To copy the course files from another computer (ex. session_3/ folder) to the Raspberry Pi, use `scp`:
+
+```bash
+scp -r session_3 pi@down-pi.local:/home/pi/robotic_ws
 ```
 
 This gives students or teachers terminal access without needing a monitor connected to the Raspberry Pi.
@@ -214,13 +220,13 @@ This should print an OpenCV version number without errors.
 Open the repository folder on the Raspberry Pi and work from:
 
 ```text
-Sessions/code_activities/
+~/home/pi/robotic_ws/session_3
 ```
 
 The shared camera helper used by the OpenCV activities is:
 
 ```text
-code_activities/common/pi_camera.py
+/common/pi_camera.py
 ```
 
 This helper:
@@ -230,11 +236,11 @@ This helper:
 
 ## 8. Run an OpenCV Investigation
 
-Example:
+Example (working on folder for session 3):
 
 ```bash
-cd /path/to/Sessions
-python3 code_activities/session03/lecturer_solution.py
+cd /robotic_ws/session_3
+python3 student_starter.py
 ```
 
 Press `q` in the OpenCV window to close the activity.
@@ -281,11 +287,11 @@ Then run the activity in the same terminal.
 
 ## 11. Run a Robot-Control Activity
 
-Example:
+Example (working on folder for session 11):
 
 ```bash
-cd /path/to/Sessions
-python3 code_activities/session08/lecturer_solution_opencv.py
+cd /robotic_ws/session_11
+python3 student_starter.py
 ```
 
 This requires:
@@ -358,9 +364,9 @@ Check:
 
 If this is the first Pi setup, start with:
 
-1. `code_activities/session03/lecturer_solution.py`
-2. `code_activities/session04/lecturer_solution.py`
-3. `code_activities/session08/lecturer_solution_opencv.py`
+1. `robotic_ws/session_3/lecturer_solution.py`
+2. `robotic_ws/session_4/lecturer_solution.py`
+3. `robotic_ws/session_8/lecturer_solution_opencv.py`
 
 That sequence verifies:
 
