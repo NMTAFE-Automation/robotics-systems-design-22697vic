@@ -15,20 +15,15 @@ This repo is the shared home for lecture notes, lab exercises, and reference mat
 
 ## Repo structure
 
-- **labs/** — hands-on lab exercises, organised by topic/week (PLC & HMI programming, IoT, Arduino/motor control, Raspberry Pi vision, pneumatics, mobile robotics, ROS 2)
-- **assignments/** — assessment briefs and submission instructions
 - **resources/** — setup guides, datasheets, wiring diagrams, cheat sheets
 - **docs/** — supporting documentation (may link out to the course website)
 
 ## Topics covered
 
-- PLC & HMI programming (PLCnext / CODESYS)
-- IoT and embedded systems
+- Maqueen Robot, python programming
 - Arduino-based motor control labs
 - Raspberry Pi vision systems
 - Pneumatics
-- Mobile robotics
-- ROS 2
 
 ## Contributing / submitting work
 
