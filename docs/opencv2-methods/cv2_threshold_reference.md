@@ -82,3 +82,7 @@ cv2.destroyAllWindows()
 - Use `cv2.THRESH_OTSU` when lighting varies between runs but is still roughly uniform across the frame — it picks the threshold automatically from the image's histogram, removing manual tuning.
 - If lighting is **uneven across the frame** (shadows, spotlights, uneven ambient light — common with a Pi camera in a real environment), global thresholding (including Otsu) will fail in parts of the image; use `cv2.adaptiveThreshold()` instead.
 - Always combine with `cv2.THRESH_BINARY` (or another mode) via `+` when using `THRESH_OTSU`/`THRESH_TRIANGLE` — they are modifier flags, not standalone modes.
+
+### Links
+
+- https://www.geeksforgeeks.org/python/simple-thresholdin-using-opencv/

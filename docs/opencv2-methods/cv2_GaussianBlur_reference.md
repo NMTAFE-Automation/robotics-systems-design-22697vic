@@ -72,3 +72,9 @@ cv2.destroyAllWindows()
 - Gaussian blur is the standard noise-reduction step **before** `cv2.Canny()` edge detection or thresholding — raw sensor noise otherwise produces many spurious edges/contours.
 - Larger `ksize` removes more noise but also smooths away fine detail and small objects — tune based on expected object/feature size in the frame.
 - Unlike `cv2.medianBlur()`, Gaussian blur is a weighted average, so it's not as effective against salt-and-pepper (impulse) noise but is faster and gives smoother results for general Gaussian-distributed sensor noise.
+
+### Links (more examples)
+
+- https://www.geeksforgeeks.org/python/python-image-blurring-using-opencv/
+
+- https://www.tutorialkart.com/opencv/python/opencv-python-gaussian-image-smoothing/

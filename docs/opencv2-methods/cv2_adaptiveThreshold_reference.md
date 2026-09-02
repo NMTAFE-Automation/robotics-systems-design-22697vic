@@ -88,3 +88,7 @@ cv2.destroyAllWindows()
 - `ADAPTIVE_THRESH_GAUSSIAN_C` generally produces smoother, less noisy results than `ADAPTIVE_THRESH_MEAN_C` and is the more common choice in practice.
 - `blockSize` and `C` typically need hand-tuning per application — start with `blockSize=11, C=2` as a reasonable default and adjust based on results.
 - A light blur (`cv2.medianBlur` or `cv2.GaussianBlur`) before adaptive thresholding helps suppress sensor noise that would otherwise create speckled artifacts in the output.
+
+### Link (example)
+
+- https://www.geeksforgeeks.org/python/python-thresholding-techniques-using-opencv-set-2-adaptive-thresholding/
