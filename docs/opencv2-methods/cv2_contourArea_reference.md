@@ -1,5 +1,9 @@
 # `cv2.contourArea()` Reference
 
+## Overview
+
+`cv2.contourArea()` calculates the enclosed area of a contour from its vertex coordinates (via Green's theorem), giving a single numeric size measurement for a detected shape. It is most often applied as a filtering step right after `findContours()`, to separate real objects from tiny noise contours caused by sensor grain or lighting artifacts. It is also used to rank contours by size (e.g., picking the largest blob) or to compute shape descriptors like circularity. The outcome is a floating-point area value per contour that drives decisions elsewhere in the pipeline — keep or discard, sort, or compare.
+
 ## Standard Syntax
 
 ```python

@@ -1,5 +1,9 @@
 # `cv2.putText()` Reference
 
+## Overview
+
+`cv2.putText()` draws a text string onto an image at a specified position, using a chosen font, scale, color, and thickness. It is applied to overlay labels, measurements, object names, or live telemetry directly onto a camera feed or processed image for human-readable debugging and reporting. This is widely used in robotics and vision dashboards to annotate detected objects with IDs, distances, or status text. The result is the same image with the requested text rendered onto it, ready for display, recording, or screenshot capture.
+
 ## Standard Syntax
 
 ```python

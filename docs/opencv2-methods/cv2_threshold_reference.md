@@ -1,5 +1,9 @@
 # `cv2.threshold()` Reference
 
+## Overview
+
+`cv2.threshold()` converts a grayscale image into a binary (or partially binary) image by classifying each pixel against a threshold value, using one of several rules such as binary, inverse, truncate, or Otsu. It is applied to separate foreground objects from background before contour detection, and is a foundational step in almost every classical vision pipeline. With Otsu's method it can also auto-compute the best threshold from the image histogram, removing manual tuning. The result is a binary mask, plus the threshold value used, that isolates the regions of interest for further shape analysis.
+
 ## Standard Syntax
 
 ```python
@@ -82,7 +86,3 @@ cv2.destroyAllWindows()
 - Use `cv2.THRESH_OTSU` when lighting varies between runs but is still roughly uniform across the frame — it picks the threshold automatically from the image's histogram, removing manual tuning.
 - If lighting is **uneven across the frame** (shadows, spotlights, uneven ambient light — common with a Pi camera in a real environment), global thresholding (including Otsu) will fail in parts of the image; use `cv2.adaptiveThreshold()` instead.
 - Always combine with `cv2.THRESH_BINARY` (or another mode) via `+` when using `THRESH_OTSU`/`THRESH_TRIANGLE` — they are modifier flags, not standalone modes.
-
-### Links
-
-- https://www.geeksforgeeks.org/python/simple-thresholdin-using-opencv/

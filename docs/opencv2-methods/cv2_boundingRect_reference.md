@@ -1,5 +1,9 @@
 # `cv2.boundingRect()` Reference
 
+## Overview
+
+`cv2.boundingRect()` computes the smallest upright (axis-aligned) rectangle that fully encloses a single contour or set of points. It is commonly applied right after `findContours()` to turn an irregular object outline into a simple rectangular region for cropping, tracking, or overlay. This is heavily used in object detection pipelines to define a region of interest (ROI) around a detected item. The result is a simple `(x, y, w, h)` tuple describing the box's position and size, which can be drawn with `rectangle()` or used to slice the image array directly.
+
 ## Standard Syntax
 
 ```python

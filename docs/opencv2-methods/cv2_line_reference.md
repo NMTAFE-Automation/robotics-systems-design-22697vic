@@ -1,5 +1,9 @@
 # `cv2.line()` Reference
 
+## Overview
+
+`cv2.line()` draws a straight line segment between two points on an image, with configurable color, thickness, and anti-aliasing. It is applied to draw crosshairs at detected points, connect tracked keypoints or trajectories, or add reference/guide lines such as a horizon or boundary marker. In robotics vision overlays it is often used to visualize motion vectors or skeleton connections between joints. The outcome is the image with the line drawn directly onto it, useful for visual debugging and operator displays.
+
 ## Standard Syntax
 
 ```python

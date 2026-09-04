@@ -1,5 +1,9 @@
 # `cv2.findContours()` Reference
 
+## Overview
+
+`cv2.findContours()` scans a binary image and extracts the boundaries of connected white regions as ordered point sequences called contours. It is the core function for shape detection, letting you identify individual objects, blobs, or markers within a scene. In practice it is applied right after thresholding or edge detection, turning a noisy binary mask into a list of distinct shapes ready for measurement. The result is a list of contours (plus an optional hierarchy) that downstream functions such as `contourArea()`, `boundingRect()`, and `drawContours()` use to analyze and visualize each detected object.
+
 ## Standard Syntax
 
 **OpenCV 4.x (current):**

@@ -1,5 +1,9 @@
 # `cv2.adaptiveThreshold()` Reference
 
+## Overview
+
+`cv2.adaptiveThreshold()` computes a local threshold for each pixel from its surrounding neighborhood's mean or Gaussian-weighted value, rather than using one global threshold for the whole image. It is applied when lighting is uneven across a scene — shadows, glare, or gradients — where a single global `cv2.threshold()` would fail in parts of the frame. This is common with real-world camera feeds, such as a Pi camera viewing an unevenly lit workspace. The outcome is a binary mask that adapts to local lighting conditions, producing more consistent object segmentation than a fixed global threshold.
+
 ## Standard Syntax
 
 ```python
@@ -88,7 +92,3 @@ cv2.destroyAllWindows()
 - `ADAPTIVE_THRESH_GAUSSIAN_C` generally produces smoother, less noisy results than `ADAPTIVE_THRESH_MEAN_C` and is the more common choice in practice.
 - `blockSize` and `C` typically need hand-tuning per application — start with `blockSize=11, C=2` as a reasonable default and adjust based on results.
 - A light blur (`cv2.medianBlur` or `cv2.GaussianBlur`) before adaptive thresholding helps suppress sensor noise that would otherwise create speckled artifacts in the output.
-
-### Link (example)
-
-- https://www.geeksforgeeks.org/python/python-thresholding-techniques-using-opencv-set-2-adaptive-thresholding/

@@ -1,5 +1,9 @@
 # `cv2.rectangle()` Reference
 
+## Overview
+
+`cv2.rectangle()` draws a rectangle, outlined or filled, between two corner points on an image. It is most often applied to visualize bounding boxes computed by `cv2.boundingRect()` or produced by an object detector, framing a detected object for human review. Combined with `putText()` it forms the standard "detection box plus label" overlay pattern used across nearly all vision applications. The outcome is the image with a rectangle drawn at the specified coordinates, ready for display or further annotation.
+
 ## Standard Syntax
 
 ```python

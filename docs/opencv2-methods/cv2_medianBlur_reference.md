@@ -1,5 +1,9 @@
 # `cv2.medianBlur()` Reference
 
+## Overview
+
+`cv2.medianBlur()` replaces each pixel with the median value of its surrounding neighborhood, which is highly effective at removing salt-and-pepper (impulse) noise while preserving sharp edges. It is applied when a camera or sensor produces random pixel dropouts, common on cheaper hardware or in electrically noisy environments. Compared to Gaussian blur it does a better job protecting edges, making it a good pre-step before thresholding or adaptive thresholding. The outcome is a cleaned image with isolated noisy pixels removed and object boundaries left largely intact.
+
 ## Standard Syntax
 
 ```python

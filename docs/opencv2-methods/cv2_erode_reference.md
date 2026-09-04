@@ -1,5 +1,9 @@
 # `cv2.erode()` Reference
 
+## Overview
+
+`cv2.erode()` shrinks white (foreground) regions in a binary or grayscale image by replacing each pixel with the minimum value found in its neighborhood, as defined by a structuring element (kernel). It is applied to remove small noise specks, separate touching objects, or trim thin protrusions from detected shapes. This step commonly follows thresholding, where sensor noise leaves tiny spurious white pixels scattered across the mask. The outcome is a cleaner image with small artifacts removed and object boundaries pulled slightly inward, ready for reliable contour extraction.
+
 ## Standard Syntax
 
 ```python

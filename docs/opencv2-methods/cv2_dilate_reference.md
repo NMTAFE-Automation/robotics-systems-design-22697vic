@@ -1,5 +1,9 @@
 # `cv2.dilate()` Reference
 
+## Overview
+
+`cv2.dilate()` expands white (foreground) regions in a binary or grayscale image by replacing each pixel with the maximum value found in its neighborhood, as defined by a structuring element (kernel). It is applied to reconnect broken edges or shapes, fill small black gaps, or thicken thin features before contour detection. This is especially useful after edge detection, where object boundaries can come out fragmented. The result is an image where foreground shapes are grown and small internal gaps are closed, improving the reliability of subsequent shape and contour analysis.
+
 ## Standard Syntax
 
 ```python

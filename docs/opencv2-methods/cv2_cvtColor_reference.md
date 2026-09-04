@@ -1,5 +1,9 @@
 # `cv2.cvtColor()` Reference
 
+## Overview
+
+`cv2.cvtColor()` converts an image from one color space to another (e.g., BGR to grayscale, BGR to HSV), remapping each pixel's channel values according to the target space's formula. It is a near-universal first step in vision pipelines: grayscale conversion feeds thresholding and edge detection, while HSV conversion enables robust color-based object segmentation regardless of brightness. Applied to a camera frame, it reshapes the data representation without changing the underlying scene content. The outcome is a new image array in the target color space, ready for whichever downstream operation needs that representation.
+
 ## Standard Syntax
 
 ```python

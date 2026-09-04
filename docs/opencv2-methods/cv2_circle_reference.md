@@ -1,5 +1,9 @@
 # `cv2.circle()` Reference
 
+## Overview
+
+`cv2.circle()` draws a circle, outlined or filled, centered at a given point with a specified radius. It is applied to mark detected keypoints, centroids, or circular objects such as fiducial markers, and a filled circle is the standard way to highlight a single point location on an overlay. This is common in tracking and pose-estimation pipelines to visualize joint positions or target centers. The result is the image with a circle drawn at the given location, aiding visual verification of detection accuracy.
+
 ## Standard Syntax
 
 ```python

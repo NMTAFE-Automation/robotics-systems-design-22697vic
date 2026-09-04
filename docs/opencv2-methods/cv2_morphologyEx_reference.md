@@ -1,5 +1,9 @@
 # `cv2.morphologyEx()` Reference
 
+## Overview
+
+`cv2.morphologyEx()` applies a combined morphological transformation — opening, closing, gradient, top-hat, black-hat, and more — built internally from erosion and dilation, in a single function call. It is applied to binary or grayscale masks to clean up noise, close small gaps, or highlight structural features before further analysis such as contour detection. This is a standard preprocessing step in vision pipelines dealing with imperfect thresholded images from real-world lighting. The result is a transformed image where unwanted specks are removed or small holes are filled, producing a cleaner mask for reliable downstream detection.
+
 ## Standard Syntax
 
 ```python
@@ -95,9 +99,3 @@ cv2.destroyAllWindows()
 - `cv2.MORPH_ELLIPSE` kernels tend to produce more natural-looking results than `cv2.MORPH_RECT` for rounded objects; `cv2.MORPH_RECT` is fine/faster for blocky shapes.
 - Kernel size is the main tuning knob: too small and noise survives, too large and fine detail/small objects get erased or merged together.
 - For camera feeds with variable lighting (common on a Raspberry Pi outdoors or under changing light), consider adaptive thresholding before morphology for more consistent binary masks.
-
-### Links (more examples)
-
-- https://www.geeksforgeeks.org/python/python-opencv-morphological-operations/
-
-- https://opencv24-python-tutorials.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_morphological_ops/py_morphological_ops.html

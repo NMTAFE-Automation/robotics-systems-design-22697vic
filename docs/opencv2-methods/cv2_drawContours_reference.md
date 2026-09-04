@@ -1,5 +1,9 @@
 # `cv2.drawContours()` Reference
 
+## Overview
+
+`cv2.drawContours()` renders one or more contours (from `findContours()`) onto an image as outlines or filled shapes, either individually or all at once. It is used to visually verify detection results, build masks, or highlight regions of interest for a human viewer or a downstream masking step. Applied in a vision pipeline, it turns abstract point-list contours into a visible overlay on the original frame. The outcome is a modified image with the selected contour(s) drawn in the chosen color, thickness, and line style, ready for display or saving.
+
 ## Standard Syntax
 
 ```python
