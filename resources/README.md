@@ -1,3 +1,6 @@
 # Resources
 
-Setup guides, datasheets, wiring diagrams, cheat sheets.
+- pi camera library
+- maqueen library
+- Huskylens library
+- Session files, student_starter.py file
