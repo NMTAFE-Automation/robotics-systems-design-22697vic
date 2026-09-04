@@ -1,3 +1,4 @@
 # Docs
 
-Supporting documentation.
+- Supporting documentation.
+- OpenCV2 methods
