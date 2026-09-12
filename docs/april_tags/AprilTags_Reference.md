@@ -90,17 +90,7 @@ Since each tag ID is unique and cheap to print, tags can label physical objects/
 **Interactive installations, art, and education**
 Tags are cheap (just ink and paper) and easy to prototype with, making them popular for interactive exhibits, escape rooms, and teaching computer vision concepts hands-on — exactly the use case for a classroom set like the ones printed for this course.
 
-## 6. Recommended Videos
-
-| Title | Focus | Link |
-|---|---|---|
-| Introduction to AprilTags in FTC (Part 2) — Beginner-Friendly Tutorial | Clear beginner explanation of what AprilTags are and how to use them | https://www.youtube.com/watch?v=nMm6Yi_s3a0 |
-| FTC AprilTag Advanced Functionality | Deeper dive into practical tag functionality and tools | https://www.youtube.com/watch?v=IYFpXJ6-_WY |
-| AprilTag Detection and Pose Estimation Tutorial | Installing and running real-time AprilTag detection + pose estimation | https://www.youtube.com/watch?v=fZ92_VMxxyo |
-| FTC AprilTags: Get Distance & Angle (Standard Webcam) | Practical distance/angle extraction with a normal webcam | https://www.youtube.com/watch?v=OZt33z-lyYo |
-| 3D Scanning with AprilTag Markers — A DIY Guide | Non-robotics application: using tags for 3D scanning workflows | https://www.youtube.com/watch?v=GoZOIQTX0DQ |
-
-## 7. AprilTags + HuskyLens + Libraries
+## 6. AprilTags + HuskyLens
 
 ### HuskyLens hardware notes
 
@@ -110,22 +100,6 @@ Tags are cheap (just ink and paper) and easy to prototype with, making them popu
 | **HuskyLens 2 (K230)** | `tag16h5`, `tag25h9`, `tag36h10`, `tag36h11` (defaults to `tag36h11`) | Newer model — supports selecting the family via its on-device menu/parameter settings, and can decode true tag IDs. |
 
 **Practical implication:** for a HuskyLens V1 project (e.g. Maqueen + micro:bit), always print `tag36h11` tags — it's the only family the sensor can see at all — and remember that the ID reported by HuskyLens is the *learned* sequence number, not the number encoded in the tag's actual pattern.
-
-### Software libraries for generating and detecting AprilTags
-
-| Library | Language | Use case |
-|---|---|---|
-| `cv2.aruco` (OpenCV) | Python/C++ | Generate tag images (`cv2.aruco.generateImageMarker`) and detect them; widely available since OpenCV already covers most robotics vision pipelines |
-| `pupil-apriltags` | Python | Lightweight, pure-detection wrapper around the original AprilRobotics C library; commonly used on Raspberry Pi for real-time detection with pose estimation |
-| `apriltag` (AprilRobotics, official) | C (with Java bindings) | The reference implementation — no external dependencies, designed to be portable to embedded/edge devices |
-| `apriltag_ros` / ROS2 `apriltag` node | ROS/ROS2 | Wraps the AprilTag detector as a ROS node, publishing `tf2` transforms and pose messages directly — the standard integration point for ROS-based robots |
-
-### Typical Raspberry Pi / OpenCV workflow (recap)
-1. Generate tags with `cv2.aruco` (family `tag36h11`), print at a known physical size.
-2. Detect with `pupil-apriltags` or `cv2.aruco` on a live camera feed.
-3. Calibrate the camera (checkerboard method) to get accurate intrinsics (fx, fy, cx, cy).
-4. Feed intrinsics + known tag size into the detector's pose estimation to get real-world x/y/z and orientation.
-5. (Optional, ROS2) Publish detections as `tf2` transforms for use in navigation/localization.
 
 ### Typical HuskyLens V1 + micro:bit workflow (recap)
 1. Print `tag36h11` tags (the only compatible family).
