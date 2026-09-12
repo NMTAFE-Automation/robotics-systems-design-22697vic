@@ -50,6 +50,22 @@ tag  36        h11
 
 **Practical rule of thumb:** unless you have a specific reason to choose otherwise (e.g. a sensor that's locked to a specific family, like HuskyLens V1), use `tag36h11`. It's the most widely supported, has excellent error tolerance, and 587 IDs is more than enough for almost any classroom or lab project.
 
+## 3a. Example Tags — `tag36h11` IDs 0–3
+
+Each image below is one full tag: the black outer border, the 6×6 internal data grid, and a white quiet zone. Notice how every ID has a visually distinct pattern — this is what the detector reads and decodes.
+
+**ID 0**
+![tag36h11 ID 0](images/tag36h11_id0.png)
+
+**ID 1**
+![tag36h11 ID 1](images/tag36h11_id1.png)
+
+**ID 2**
+![tag36h11 ID 2](images/tag36h11_id2.png)
+
+**ID 3**
+![tag36h11 ID 3](images/tag36h11_id3.png)
+
 ## 4. How AprilTags Are Used in Robotic Applications
 
 **Localization & SLAM ground-truthing**
