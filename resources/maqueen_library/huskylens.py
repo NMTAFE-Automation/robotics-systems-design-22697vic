@@ -108,7 +108,8 @@ class HuskyLensV1:
         return blocks
 
     def get_result(self):
-        self.algorithm_tag_recognition()
+        # self.algorithm_tag_recognition()
+        # no longer re-sends the algorithm-switch command on every call:
         self.request_blocks()
         blocks = self.read_blocks()
         return {
