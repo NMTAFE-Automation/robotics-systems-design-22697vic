@@ -6,6 +6,13 @@ DEVICE_ID = 0x11
 CMD_REQUEST_ALL = 0x20
 CMD_ALGORITHM = 0x2D
 
+# HuskyLens algorithm IDs (sent as 2 bytes, low byte first)
+ALGORITHMS = {
+    "object_tracking": 0x01,
+    "color_recognition": 0x04,
+    "tag_recognition": 0x05,
+}
+
 
 class Block:
     __slots__ = ("x", "y", "w", "h", "ID")
@@ -19,13 +26,15 @@ class Block:
 
 
 class HuskyLensV1:
-    def __init__(self, address=HUSKYLENS_V1_ADDR):
+    def __init__(self, address=HUSKYLENS_V1_ADDR, algorithm="tag_recognition"):
         self.address = address
+        self.algorithm = "tag_recognition"
         try:
             i2c.init(freq=100000)
         except Exception:
             pass
-        self._write_command(CMD_ALGORITHM, b"\x05\x00")
+        if not self.switch_algorithm(algorithm):
+            raise ValueError("unknown algorithm: %s" % algorithm)
         sleep(50)
 
     def _checksum(self, payload):
@@ -54,14 +63,18 @@ class HuskyLensV1:
         return True
 
     def switch_algorithm(self, algorithm_name):
-        if algorithm_name != "tag_recognition":
+        if algorithm_name not in ALGORITHMS:
             return False
-        self.algorithm_tag_recognition()
+        self._write_command(CMD_ALGORITHM, bytes([ALGORITHMS[algorithm_name], 0x00]))
+        self.algorithm = algorithm_name
+        sleep(20)
         return True
 
     def algorithm_tag_recognition(self):
-        self._write_command(CMD_ALGORITHM, b"\x05\x00")
-        sleep(20)
+        self.switch_algorithm("tag_recognition")
+
+    def algorithm_color_recognition(self):
+        self.switch_algorithm("color_recognition")
 
     def request_blocks(self):
         self._write_command(CMD_REQUEST_ALL)
@@ -114,14 +127,20 @@ class HuskyLensV1:
         blocks = self.read_blocks()
         return {
             "camera_version": 1,
-            "algorithm": "tag_recognition",
+            "algorithm": self.algorithm,
             "ids": [block.ID for block in blocks],
             "blocks": blocks,
             "count": len(blocks),
         }
 
-    def get_tag_ids(self):
+    def get_ids(self):
         return self.get_result()["ids"]
+
+    def get_tag_ids(self):
+        return self.get_ids()
+
+    def get_color_ids(self):
+        return self.get_ids()
 
     def get_object(self, object_id=None):
         blocks = self.get_result()["blocks"]
